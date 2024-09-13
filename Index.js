@@ -2,7 +2,7 @@ import express from "express";
 import connect from "./DB_Connection.js";
 import Controller from "./Controller.js";
 
-const [renderPage, addActivity, updateActivity] = Controller;
+const [renderPage, addActivity, updateActivity, deleteActivity] = Controller;
 
 const PORT = 2000;
 
@@ -21,6 +21,7 @@ app.set("view engine", "ejs");
 app.get("/", renderPage); 
 app.get("/add-todo", addActivity);
 app.get("/update-todo", updateActivity);
+app.get("/delete-todo", deleteActivity);
 
 
 // listen server
