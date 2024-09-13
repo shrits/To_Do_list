@@ -1,10 +1,15 @@
 import express from 'express';
+import connect from './DB_Connection.js';
 
 const PORT = 2000;
 
 //init app
 
 const app = express();
+
+//Establish connection with Database
+
+connect();
 
 // view engine
 
