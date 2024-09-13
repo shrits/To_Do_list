@@ -16,4 +16,12 @@ const addActivity = async (req, res, next) => {
                }
     }
 
-export default [renderPage, addActivity];
+const updateActivity = async (req, res, next) => {
+    try {
+        res.render("UpdateToDoPage");
+        }
+    catch (error) {
+        res.status(500).json({ message: error.message });
+               }
+    }
+export default [renderPage, addActivity, updateActivity];
