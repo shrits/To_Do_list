@@ -1,5 +1,8 @@
-import express from 'express';
-import connect from './DB_Connection.js';
+import express from "express";
+import connect from "./DB_Connection.js";
+import Controller from "./Controller.js";
+
+const [renderPage,addActivity] = Controller;
 
 const PORT = 2000;
 
@@ -13,7 +16,10 @@ connect();
 
 // view engine
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
+
+app.get("/", renderPage); 
+app.get("/add-todo", addActivity);
 
 // listen server
 app.listen(PORT, () => {
