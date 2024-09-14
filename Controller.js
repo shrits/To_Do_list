@@ -1,6 +1,6 @@
 const renderPage = async (req, res, next) => {
     try {
-        res.render("Index");
+        res.render("Index", {title: "List of Activities "});
         }
     catch (error) {
         res.status(500).json({ message: error.message });
@@ -9,7 +9,7 @@ const renderPage = async (req, res, next) => {
 
 const addActivity = async (req, res, next) => {
     try {
-        res.render("NewToDoPage");
+        res.render("NewToDoPage", {title: "Add Activity "});
         }
     catch (error) {
         res.status(500).json({ message: error.message });
@@ -18,7 +18,7 @@ const addActivity = async (req, res, next) => {
 
 const updateActivity = async (req, res, next) => {
     try {
-        res.render("UpdateToDoPage");
+        res.render("UpdateToDoPage", {title: "Update Activity "});
         }
     catch (error) {
         res.status(500).json({ message: error.message });
@@ -26,7 +26,7 @@ const updateActivity = async (req, res, next) => {
     }
 const deleteActivity = async (req, res, next) => {
     try {
-        res.render("DeleteToDoPage");
+        res.render("DeleteToDoPage", {title: "Delete Activity "});
         }
     catch (error) {
         res.status(500).json({ message: error.message });
