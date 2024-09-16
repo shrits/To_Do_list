@@ -1,10 +1,8 @@
 import mongoose from 'mongoose';
 
-const connectionUrl = "mongodb://localhost:27017/ToDoDB";
-
 const connect = async () => {
     try {
-        await mongoose.connect(connectionUrl);
+        await mongoose.connect(process.env.CONNECTION_URL);
         console.log("Connected to Database");
     } catch (error) {
         console.error("Failed to connect to Database", error);
