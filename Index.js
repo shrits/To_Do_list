@@ -10,7 +10,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const [renderPage, addActivity, updateActivity, deleteActivity, addActivityfn] = Controller;
+const [renderPage, addActivity, updateActivity, deleteActivity, addActivityfn, updateActivityfn, deleteActivityfn] = Controller;
 const __filename = fileURLToPath(import.meta.url); 
 const __dirname = path.dirname(__filename);
 
@@ -37,6 +37,9 @@ app.get("/update-todo", updateActivity);
 app.get("/delete-todo", deleteActivity);
 
 app.post("/add-todo", addActivityfn);
+app.post("/update-todo/:id", updateActivityfn);
+
+app.get("/confirm-delete", deleteActivityfn);
 
 
 // listen server
